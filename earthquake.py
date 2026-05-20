@@ -58,7 +58,7 @@ if st.button("위험도 분석"):
         m = folium.Map(location=[lat, lon], zoom_start=3)
 
         # 데이터 샘플링
-        df_sample = df_new.sample(5000, random_state=42)
+        df_sample = df_new.sample(500, random_state=42)
 
         # 지도에 점 표시
         for i in range(len(df_sample)):
@@ -85,4 +85,4 @@ if st.button("위험도 분석"):
         ).add_to(m)
 
         # 스트림릿에 지도 출력
-        st_folium(m, width=1000, height=600)
+        st_folium(m, width=1000, height=600, returned_objects=[])
