@@ -47,7 +47,7 @@ if st.button("위험도 분석"):
         st.subheader(f"예상 위험도: {risk_dict[main_cluster]}")
 
         # 지도 생성
-        m = folium.Map(location=[lat, lon], zoom_start=3)
+        m = folium.Map(location=[lat, lon], zoom_start=4, tiles="CartoDB positron")
 
         # 데이터 샘플링
         df_sample = df_new.sample(500, random_state=42)
@@ -62,7 +62,7 @@ if st.button("위험도 분석"):
                     df_sample.iloc[i]['위도'],
                     df_sample.iloc[i]['경도']
                 ],
-                radius=3,
+                radius=df_sample.iloc[i]['규모'],
                 color=colors[cluster],
                 fill=True,
                 fill_color=colors[cluster],
