@@ -7,18 +7,10 @@ from streamlit_folium import st_folium
 df_new = pd.read_csv("earthquake.csv")
 
 # 위험도 사전
-risk_dict = {
-    0: '위험도 높음',
-    1: '위험도 낮음',
-    2: '위험도 중간'
-}
+risk_dict = {0: '위험도 높음',1: '위험도 낮음',2: '위험도 중간'}
 
 # 군집 색상
-colors = {
-    0: 'red',
-    1: 'blue',
-    2: 'green'
-}
+colors = {0: 'red', 1: 'blue', 2: 'green'}
 
 # 제목
 st.title("세계 지진 위험도 분석 시스템")
